@@ -1,0 +1,65 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Standup App2
+    = csrf_meta_tags
+    / %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
+    / Optional Theme
+    / %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css", :rel => "stylesheet"}/
+    / %link{:href => "https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css", :rel => "stylesheet"}/
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.2/css/AdminLTE.css", :rel => "stylesheet"}/
+    / %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css\n", :rel => "stylesheet"}/
+
+    / %script{:crossorigin => "anonymous", :integrity => "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", :src => "https://code.jquery.com/jquery-3.2.1.min.js"}
+
+    / %script{:crossorigin => "anonymous", :integrity => "sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=", :src => "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"}
+
+
+
+    // udm/popper.min.js invender.assets/javascripts  
+    /%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/popper.min.js"}
+
+    / Bootstrap 3.3.7
+    / %script{:crossorigin => "anonymous", :integrity => "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", :src => "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
+    / AdminLTE App
+    / %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js"}
+    / %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.js"}
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.3/moment.min.js"}
+    
+    %link{:href => "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic", :rel => "stylesheet"}/
+
+    %title AdminLTE 2 | Starter
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "application", 'data-turbolinks-track': 'reload'
+  /
+    BODY TAG OPTIONS:
+    \=================
+    Apply one or more of the following classes to get the
+    desired effect
+    |---------------------------------------------------------|
+    | SKINS         | skin-blue                               |
+    |               | skin-black                              |
+    |               | skin-purple                             |
+    |               | skin-yellow                             |
+    |               | skin-red                                |
+    |               | skin-green                              |
+    |---------------------------------------------------------|
+    |LAYOUT OPTIONS | fixed                                   |
+    |               | layout-boxed                            |
+    |               | layout-top-nav                          |
+    |               | sidebar-collapse                        |
+    |               | sidebar-mini                            |
+    |---------------------------------------------------------|
+
+  %body.hold-transition.skin-yellow.sidebar-mini
+    .wrapper
+      = render "layouts/lte/header"
+      = render "layouts/lte/sidebar"
+      .content-wrapper
+        = yield
+      = render 'layouts/lte/footer'
+      .control-sidebar-bg
+    / REQUIRED JS SCRIPTS
+    / jQuery 3
+

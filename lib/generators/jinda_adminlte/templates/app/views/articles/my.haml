@@ -1,0 +1,55 @@
+%section.content
+  %h1
+    - @title= "My Articles"
+    - @page_title  = 'All Articlces'
+    = paginate @articles
+  .row
+    .col-md-8
+    .box.box-success
+      .box-header.with-border
+        %i.fa.fa-comments-o
+        %h3.box-title
+          = @page_title
+          = paginate @articles
+
+        .box-tools.pull-right{"data-toggle" => "tooltip", :title => "Status"}
+          .btn-group{"data-toggle" => "btn-toggle"}
+            %button.btn.btn-default.btn-sm.active{:type => "button"}
+              %i.fa.fa-square.text-green
+            %button.btn.btn-default.btn-sm{:type => "button"}
+              %i.fa.fa-square.text-red
+      #chat-box.box-body.chat
+        .table-responsive
+          %table#article-table.table.no-margin
+  
+            %tbody
+              
+
+              - @articles.each do |article|
+                %tr
+                  .item
+                    %img.online{:alt => "user image", :src => asset_url("dist/img/user4-128x128.jpg")}/
+                    %p.message
+                        
+                      %a.name{:href => "#"}
+                        %small.text-muted.pull-right
+                          = link_to image_tag('pencil.png', style:'border:none; float:none;'), {controller: "jinda", action: "init", s: 'articles:xedit_article', article_id: article.id}, data: { confirm: "Please Confirm" }
+                          = link_to image_tag('delete.png', style:'border:none; float:none;'), "#", :onclick=>"if (confirm('Please Confirm')) {location.hash='/articles/destroy/#{article.id}';}"
+                          %i.fa.fa-clock-o
+                          = article.created_at.strftime('%m/%d/%Y')
+                        Mike 
+ 
+                      = link_to article.title, :controller=>"articles", :action=>"show", :id=>article.id
+                    .attachment
+                      %p.filename
+                        Theme-thumbnail-image.jpg
+                        = article.body.html_safe
+                      .pull-right
+                        %button.btn.btn-primary.btn-sm.btn-flat{:type => "button"} Open
+
+
+
+      / /.box-body
+      .box-footer.clearfix
+ 
+
