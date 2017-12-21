@@ -14,7 +14,6 @@ module Jinda_adminlte
       inside("app/assets") { run "mv stylesheets ../../tmp/cache" }
       inside("app/jinda") { run "mv index.mm index.mm.bak"}
       directory "app/assets/jinda_assets"
-      directory "app/assets/fonts"
       directory "app/views/adminltes"
       directory "app/views/layouts/lte"
 
@@ -23,8 +22,8 @@ module Jinda_adminlte
     def copy_theme
       copy_file "application.js","app/assets/javascripts/application.js"
       copy_file "jindalte.js","app/assets/javascripts/jindalte.js"
-      copy_file "application.scss","app/assets/stylesheets/application.scss"
-      copy_file "jindalte.css","app/assets/stylesheets/jindalte.css"
+      copy_file "application.css.scss","app/assets/stylesheets/application.css.scss"
+      copy_file "jindalte.css.scss","app/assets/stylesheets/jindalte.css.scss"
       copy_file "application.haml","app/views/layouts/application.haml"
       copy_file "adminltes_controller.rb","app/controllers/adminltes_controller.rb"
       copy_file "index.mm","app/jinda/index.mm"
