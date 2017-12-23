@@ -1,12 +1,15 @@
-# Jinda_adminlte
+# Theme: Jinda_adminlte 
 
 Convert Jinda jquery.mobile to Jinda bootstrap AdminBSB theme 
 Make sure finish Jinda Installation first.
 
+* ![j18-screen](https://user-images.githubusercontent.com/3953832/34321063-d692e82a-e7cb-11e7-8594-156a9ba390a5.png)
+
+## Check available themes at [jinda](https://github.com/kul1/jinda)
 
 ## Installation
 
-Finish install Jinda
+[Finish install Jinda](https://github.com/kul1/jinda)
 Add this line to your application's Gemfile:
 
 ```ruby
