@@ -30,7 +30,8 @@
                 %li
                   %a{:href => "#"}
                   .pull-left
-                    %img.img-circle{:alt => "User Image", :src => asset_url("dist/img/user2-160x160.jpg")}/
+                    - get_login_user_info
+                    %img.img-circle{:alt => "User Image", src: $user_image}/
                   %h4
                     Sender Name
                     %small
@@ -76,13 +77,14 @@
               %a{:href => "#"} View all tasks
         %li.dropdown.user.user-menu
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            %img.user-image{:alt => "User Image", :src => asset_url("dist/img/user2-160x160.jpg")}/
-            %span.hidden-xs Alexander Pierce
+            - get_login_user_info
+            %img.user-image{:alt => "User Image", src: $user_image}/
+            %span.hidden-xs #{$user_name}
           %ul.dropdown-menu
             %li.user-header
-              %img.img-circle{:alt => "User Image", :src => asset_url("dist/img/user2-160x160.jpg")}/
+              %img.img-circle{:alt => "User Image", :src => $user_image}/
               %p
-                Alexander Pierce - Web Developer
+                #{$user_name} - Developer
                 %small Member since Nov. 2012
             %li.user-body
               .col-xs-4.text-center
