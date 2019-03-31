@@ -1,0 +1,9 @@
+-# todo = @todo
+<%= fields_for todo do |f| %> 
+  <%= f.label :title, "Title" %> 
+  <%= f.text_field :title %> 
+  <%= f.label :due, "Due Date" %> 
+  <%= f.text_field  :due %> 
+  <%= f.label :completed, "Completed %>"
+  <%= f.check_box :completed %> 
+<% end %>

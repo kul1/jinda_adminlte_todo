@@ -1,0 +1,40 @@
+.container
+  - @title= "My Todo"
+  - @ctodos = @todos.count
+  %p
+    - @page_title  = 'All Todo'
+  %head 
+    %title=@page_title 
+  .text-center.well My Todo #{@ctodos}
+  %input#myInput{:placeholder => "Search..", :type => "text"}
+
+  %table#myTable.table.table-striped.table-bordered.table-responsive
+    %thead
+      %tr
+        %th 
+          = sortable "completed"
+        %th 
+          = sortable "title"
+        %th 
+          = sortable "due"
+        %th 
+          Delete
+        %th Edit
+    %tbody#myTable1
+      - @todos.each do |todo|
+        %tr
+          %td
+            - if todo.completed
+              = link_to todos_complete_path :controller=>"todos", :action=>"complete", :todo_id=> todo.id do 
+                %i.fa.fa-check-square-o
+            - else
+              = link_to todos_complete_path :controller=>"todos", :action=>"complete", :todo_id=> todo.id do 
+                %i.fa.fa-square-o
+          %td= link_to todo.title, :controller=>"todos", :action=>"show", :id=>todo.id
+          %td= todo.due
+          %td(align='center')= link_to image_tag('delete.png', style:'border:none; float:none;'), {controller: "todos", action: "destroy",  todo_id: todo.id}, data: { confirm: "Please Confirm" }
+          %td(align='center')= link_to image_tag('pencil.png', style:'border:none; float:none;'), {controller: "jinda", action: "init", s: 'todos:xedit_todo', todo_id: todo.id}, data: { confirm: "Please Confirm" }
+
+
+  =paginate @todos
+
