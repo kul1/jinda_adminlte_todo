@@ -1,0 +1,11 @@
+- @title= "Example Todo "
+%p
+  - @page_title  = 'Example Todos'
+%h2 My Example Todo 
+%table#example.display{"data-source" => "#{todos_path(format: "json")}" }
+  %thead
+    %tr
+      %th Completed
+      %th Title
+      %th Due
+    %tbody  

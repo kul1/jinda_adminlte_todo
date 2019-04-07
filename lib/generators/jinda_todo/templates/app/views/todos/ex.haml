@@ -1,8 +1,8 @@
 - @title= "My Todo "
 %p
   - @page_title  = 'My Todos'
-%h2 My Todo 
-%table#todos.display{"data-source" => "#{todos_path(format: "json")}" }
+%h2 Example Todo 
+%table#example.display.dt-body-center{"data-source" => "#{todos_path(format: "json")}" }
   %thead
     %tr
       %th Completed

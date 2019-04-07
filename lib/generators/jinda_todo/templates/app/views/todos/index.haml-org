@@ -1,7 +1,7 @@
 - @title= "My Todo "
 %p
   - @page_title  = 'All Todos'
-.text-center.well All Todo 
+%h2 AJax Table from Server
 %table#todos.display{"data-source" => "#{todos_path(format: "json")}" }
   %thead
     %tr

@@ -1,5 +1,6 @@
 class TodosDatatable
   delegate :params, :link_to, to: :@view
+
   def initialize(view)
 	@view = view
   end
@@ -19,7 +20,8 @@ class TodosDatatable
   	todos.map do |todo|
     	[
 			todo.completed,
-      		link_to(todo.title, todo),
+      		link_to(todo.title, "show"),
+            #todo.title,
       		todo.due
     	]
 	end
@@ -30,7 +32,17 @@ class TodosDatatable
   end
 
   def fetch_todos
-    todos = Todo.order("#{sort_column} #{sort_direction}")
+    # get Todo file from todos_controller
+    # @todo = Rails.cache.read("todo_cache")
+    # todos = $todos
+    if $user_id != ''
+      todos = "Todo::TodoM#{$user_id.to_s}".constantize 
+      flash.now[:error] = "Found User File"
+      # Guest User which no id
+      # Display for sample
+      todos = Todo
+    end
+    todos = todos.order("#{sort_column} #{sort_direction}")
     todos = todos.page(page).per(per_page)
     if params[:sSearch].present?
       #todos = todos.where("name like :search or category like :search", search: "%#{params[:sSearch]}%")
