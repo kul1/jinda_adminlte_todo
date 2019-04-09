@@ -37,7 +37,6 @@ class TodosDatatable
     # todos = $todos
     if $user_id != ''
       todos = "Todo::TodoM#{$user_id.to_s}".constantize 
-      flash.now[:error] = "Found User File"
       # Guest User which no id
       # Display for sample
       todos = Todo

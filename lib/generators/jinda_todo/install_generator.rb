@@ -15,8 +15,10 @@ module Jinda_todo
       def setup_routes
         route "resources :todos"
         route "get '/todos/my' => 'todos/my'"
+        route "get '/todos/ex' => 'todos/ex'"
         route "get '/todos/complete' => 'todos#complete'"
         route "get '/todos/my/destroy' => 'todos#destroy'"
+        route "get '/todos/ex/destroy' => 'todos#destroy'"
         route "get '/todos/destroy' => 'todos#destroy'"
       end
 
@@ -37,9 +39,12 @@ module Jinda_todo
         copy_file "application.js","app/assets/javascripts/application.js"
         copy_file "todos.coffee","app/assets/javascripts/todos.coffee"
         copy_file "jinda-todo.js","app/assets/javascripts/jinda-todo.js"
+        copy_file "todo-my.js","app/assets/javascripts/todo-my.js"
+        copy_file "todo-ex.js","app/assets/javascripts/todo-ex.js"
         copy_file "application.css.scss","app/assets/stylesheets/application.css.scss"
         copy_file "jinda-todo.css.scss","app/assets/stylesheets/jinda-todo.css.scss"
         copy_file "application.haml","app/views/layouts/application.haml"
+        copy_file "_head.html.erb","app/views/layouts/_head.html.erb"
         copy_file "index.mm","app/jinda/index.mm"
         copy_file "todos_controller.rb","app/controllers/todos_controller.rb"
         copy_file "todo.rb","app/models/todo.rb"

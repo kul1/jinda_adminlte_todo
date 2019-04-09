@@ -1,11 +1,13 @@
-- @title= "My Todo "
-%p
-  - @page_title  = 'My Todos'
-%h2 Example Todo 
-%table#example.display.dt-body-center{"data-source" => "#{todos_path(format: "json")}" }
-  %thead
-    %tr
-      %th Completed
-      %th Title
-      %th Due
-    %tbody  
+.container
+
+  - @title= "My Todo "
+  %p
+    - @page_title  = 'My Todos'
+  %h2 Example Todo 
+  %table#example.table.table-striped.display.dt-body-center{"data-source" => "#{todos_path(format: "json")}" }
+    %thead
+      %tr
+        %th Completed
+        %th Title
+        %th Due
+      %tbody  
