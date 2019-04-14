@@ -28,6 +28,7 @@ module Jinda_todo
         inside("app/assets") { run "mv jinda_assets ../../tmp/cache" }
         inside("app/assets") { run "mv javascripts ../../tmp/cache" }
         inside("app/assets") { run "mv stylesheets ../../tmp/cache" }
+        directory "public/fonts"
         directory "app/assets/jinda_assets"
         directory "app/views/layouts/lte"
         directory "app/datatables"
