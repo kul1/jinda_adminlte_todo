@@ -1,7 +1,11 @@
-# Theme: Jinda_adminlte 
+# Theme: Jinda_adminlte (Version 0.4.0) 
 
 Convert Jinda jquery.mobile to Jinda bootstrap AdminBSB theme 
 Make sure finish Jinda Installation first.
+
+## Requirement
+* Installed Jinda 0.4 
+* (Please make sure Jinda and Theme are in same version)
 
 * ![j18-screen](https://user-images.githubusercontent.com/3953832/34321063-d692e82a-e7cb-11e7-8594-156a9ba390a5.png)
 
